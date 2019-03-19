@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:id="@+id/activity_main"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:context=".MainActivity">
+    <EditText
+            android:layout_width="186dp"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="10"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="40dp"
+            android:id="@+id/number"
+            android:layout_alignParentStart="true"
+            android:hint="@string/enter_a_number_edit_text"/>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/answer"
+            android:text="@string/answer"
+            android:layout_alignStart="@+id/number" android:textSize="24sp"
+            android:layout_alignParentTop="true" android:layout_marginTop="109dp"/>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/time"
+            android:text="@string/time" android:layout_alignParentTop="true"
+            android:layout_marginTop="183dp" android:layout_alignStart="@+id/number" android:textSize="24sp"/>
+    <Button
+            android:text="@string/factorize_button_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/factorize_button" android:layout_alignParentEnd="true" android:layout_marginEnd="25dp"
+            android:layout_alignTop="@+id/number" android:layout_marginBottom="40dp"/>
+    <EditText
+            android:layout_width="69dp"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:ems="10"
+            android:id="@+id/x1"
+            android:hint="@string/x1"
+            android:layout_alignStart="@+id/number"
+            android:layout_alignParentBottom="true" android:layout_marginBottom="296dp"/>
+    <EditText
+            android:layout_width="69dp"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:ems="10"
+            android:id="@+id/y1"
+            android:hint="@string/y1"
+            android:layout_alignStart="@+id/number" android:layout_alignParentBottom="true"
+            android:layout_marginBottom="217dp"/>
+    <EditText
+            android:layout_width="69dp"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:ems="10"
+            android:id="@+id/x2"
+            android:hint="@string/x2"
+            android:layout_alignEnd="@+id/number" android:layout_alignTop="@+id/x1"/>
+    <EditText
+            android:layout_width="69dp"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:ems="10"
+            android:id="@+id/y2"
+            android:hint="@string/y2"
+            android:layout_alignTop="@+id/y1" android:layout_alignEnd="@+id/number"/>
+    <EditText
+            android:layout_width="69dp"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:ems="10"
+            android:id="@+id/sigma"
+            android:hint="@string/sigma"
+            android:layout_alignTop="@+id/y1" android:layout_alignStart="@+id/factorize_button"/>
+    <EditText
+            android:layout_width="69dp"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:ems="10"
+            android:id="@+id/p"
+            android:hint="@string/p"
+            android:layout_alignStart="@+id/factorize_button"
+            android:layout_alignTop="@+id/x1"/>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/answer2"
+            android:text="@string/answer2"
+            android:textSize="24sp"
+            android:layout_alignParentBottom="true" android:layout_marginBottom="165dp"
+            android:layout_alignStart="@+id/number"/>
+    <Button
+            android:text="@string/neural_network_button_text"
+            android:layout_width="253dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/neural_network_button"
+            android:layout_alignParentBottom="true" android:layout_marginBottom="72dp"
+            android:layout_alignParentStart="true" android:layout_marginStart="54dp"/>
+    <View
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="?android:attr/listDivider"
+            android:layout_alignParentStart="true" android:layout_alignParentTop="true"
+            android:layout_marginTop="248dp"/>
+</RelativeLayout>

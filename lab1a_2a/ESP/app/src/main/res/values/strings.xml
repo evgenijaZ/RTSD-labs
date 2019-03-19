@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Factorization &amp; Neural Network</string>
+    <string name="answer">n = ? * ?</string>
+    <string name="factorize_button_text">Factorize</string>
+    <string name="enter_a_number_edit_text">Enter A Number</string>
+    <string name="neural_network_button_text">Run Neural Network</string>
+    <string name="answer2">w1 = 0, w2 = 0</string>
+    <string name="x1">x1</string>
+    <string name="y1">y1</string>
+    <string name="x2">x2</string>
+    <string name="y2">y2</string>
+    <string name="sigma">sigma</string>
+    <string name="p">p</string>
+    <string name="time">00:00:00</string>
+</resources>
