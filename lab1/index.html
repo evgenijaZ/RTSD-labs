@@ -1,0 +1,67 @@
+<html>
+   <head>
+      <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+   </head>
+   <body>
+      <div id="mx_div"></div>
+      <div id="dx_div"></div>
+      <div id="chart_div"></div>
+   </body>
+   <script type="text/javascript">
+	google.charts.load('current', {
+	    'packages': ['corechart']
+	});
+	google.charts.setOnLoadCallback(drawChart);
+
+	function fn(N, n, w) {
+	    var result = [];
+	    for (var j = 0; j < N; j++)
+		result.push([j, 0]);
+	    for (var i = 0; i < n; i++) {
+		var A = Math.random() * 10;
+		var fi = Math.random() * 10;
+		for (var j = 0; j < N; j++) {
+		    result[j][1] += A * Math.sin((w / n) * (i + 1) * j + fi);
+		}
+	    }
+	    return result;
+	}
+
+	var dots = fn(1024, 6, 1500);
+
+	function Mx(array) {
+	    var mx = 0;
+	    for (var i = 0; i < array.length; i++) {
+		mx += array[i][1];
+	    }
+	    return mx / array.length;
+	}
+
+	function Dx(array) {
+	    var dx = 0;
+	    var mx = Mx(array);
+	    for (var i = 0; i < array.length; i++) {
+		dx += (mx - array[i][1]) ^ 2;
+	    }
+	    return dx / (array.length - 1);
+	}
+
+	function drawChart() {
+	    var data = new google.visualization.DataTable();
+	    data.addColumn('number', 'x');
+	    data.addColumn('number', 'y');
+	    data.addRows(dots);
+
+	    var options = {
+		'title': 'Lab #1',
+		'width': 1000,
+		'height': 600
+	    };
+
+	    var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+	    chart.draw(data, options);
+	}
+	document.getElementById("mx_div").innerHTML = "Mx: " + Mx(dots);
+	document.getElementById("dx_div").innerHTML = "Dx: " + Dx(dots); 
+   </script>
+</html>
