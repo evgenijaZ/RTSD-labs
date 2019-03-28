@@ -1,0 +1,47 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+    <script type="text/javascript">
+	        google.charts.load('current', {'packages':['line']});
+      google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+	
+	var fn_arr  = fn( 1200, 6, 1500);
+	var fft_arr  = FFT(fn_arr, 1200);
+	
+      var data1 = new google.visualization.DataTable();
+      data1.addColumn('number', 'N');
+      data1.addColumn('number', 'FFT');
+	  data1.addRows(fft_arr);
+
+	  
+      var data2 = new google.visualization.DataTable();
+      data2.addColumn('number', 'N');
+      data2.addColumn('number', 'f(n)');
+      data2.addRows(fn_arr);
+	 
+      var options = {
+        chart: {
+          title: 'Lab 3',
+          subtitle: 'main task'
+        },
+        width: 1400,
+        height: 500
+      };
+
+      var chart1 = new google.charts.Line(document.getElementById('ftt_chart'));
+      chart1.draw(data1, google.charts.Line.convertOptions(options));  
+
+	  var chart2 = new google.charts.Line(document.getElementById('fn_chart'));
+      chart2.draw(data2, google.charts.Line.convertOptions({width:1400, height: 500}));
+    }
+	
+    </script>
+  </head>
+  <body>
+    <div id="ftt_chart" style="width: 1500px; height: 500px"></div>
+    <div id="fn_chart" style="width: 1500px; height: 400px"></div>
+  </body>
+</html>
